@@ -1,6 +1,6 @@
-# Firebase Realtime Database Integration
+﻿# Firebase Realtime Database Integration
 
-Dokumen ini menjelaskan implementasi Firebase di dalam aplikasi Smart Medicine Tracker dan fungsinya sebagai penghubung (jembatan data) untuk perangkat keras IoT (ESP8266/ESP32).
+Dokumen ini menjelaskan implementasi Firebase di dalam aplikasi Smart Medicine Tracker dan fungsinya sebagai penghubung (jembatan data) untuk perangkat keras IoT (ESP32 V3).
 
 ---
 
@@ -10,7 +10,7 @@ Firebase dalam proyek Smart Medicine Tracker tidak digunakan sebagai database re
 
 Ketika pengguna mengatur jadwal di aplikasi *mobile*, kotak obat di dunia nyata tidak bisa "melihat" jadwal tersebut secara langsung karena tidak terhubung langsung ke HP. Firebase Realtime Database menyelesaikan masalah ini dengan menyediakan *Node* JSON yang tersimpan di cloud, di mana:
 *   **Flutter App:** Bertindak sebagai *Publisher* (Menulis data jadwal).
-*   **Hardware (ESP8266/ESP32):** Bertindak sebagai *Subscriber* (Membaca data jadwal setiap saat via koneksi Wi-Fi).
+*   **Hardware (ESP32 V3):** Bertindak sebagai *Subscriber* (Membaca data jadwal setiap saat via koneksi Wi-Fi).
 
 ---
 
@@ -70,7 +70,7 @@ Ini adalah bentuk penyelarasan dua arah secara *blind push* (Aplikasi selalu men
 
 ## 5. Keamanan & Konfigurasi Firebase (*Rules*)
 
-Saat ini (dalam tahap *prototyping*), Firebase Realtime Database di atur ke dalam mode publik (**Test Mode**). Aturan ini sengaja diset terbuka agar modul ESP8266/ESP32 dapat melakukan pembacaan (*GET request* HTTP atau Firebase Library di Arduino IDE) tanpa harus mengimplementasikan algoritma Autentikasi yang rumit di C++.
+Saat ini (dalam tahap *prototyping*), Firebase Realtime Database di atur ke dalam mode publik (**Test Mode**). Aturan ini sengaja diset terbuka agar modul ESP32 V3 dapat melakukan pembacaan (*GET request* HTTP atau Firebase Library di Arduino IDE) tanpa harus mengimplementasikan algoritma Autentikasi yang rumit di C++.
 
 **Aturan Firebase saat ini:**
 ```json
@@ -82,5 +82,6 @@ Saat ini (dalam tahap *prototyping*), Firebase Realtime Database di atur ke dala
 }
 ```
 
-**⚠️ Peringatan untuk Rilis Produksi:**
+**âš ï¸ Peringatan untuk Rilis Produksi:**
 Jika aplikasi ini sudah melewati tahap tugas/prototipe dan siap disebar ke publik secara nyata, aturan di atas sangat berbahaya karena siapa saja bisa menghapus atau mengubah jadwal obat orang lain jika mengetahui URL Firebase-nya. Untuk produksi, perlu diimplementasikan *Firebase Authentication* (Anonymous Login) di Flutter dan IoT, lalu aturan diubah menjadi `".read": "auth != null"`.
+

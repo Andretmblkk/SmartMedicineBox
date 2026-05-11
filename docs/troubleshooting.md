@@ -1,4 +1,4 @@
-# Panduan Pemecahan Masalah (Troubleshooting)
+﻿# Panduan Pemecahan Masalah (Troubleshooting)
 
 Dokumen ini mendeskripsikan kendala umum yang paling sering terjadi selama proses kompilasi (*build*) maupun saat eksekusi (*runtime*) aplikasi Smart Medicine Tracker, beserta cara mengatasinya.
 
@@ -27,7 +27,7 @@ Ada dua kemungkinan: Android OS memblokir akses *Exact Alarm* (mulai Android 12+
 
 ---
 
-## Masalah 3: Modul IoT (ESP8266/ESP32) Tidak Bereaksi pada Kotak Obat
+## Masalah 3: Modul IoT (ESP32 V3) Tidak Bereaksi pada Kotak Obat
 **Gejala:** Anda menghapus atau menambah jadwal obat di aplikasi, aplikasi berhasil memperbarui tampilan, tetapi motor Servo di modul IoT fisik diam tidak merespon.
 **Penyebab:**
 Aplikasi tidak berhasil mendorong (push) JSON ke node Firebase Realtime Database.
@@ -62,3 +62,4 @@ Solusi instan tanpa membongkar konfigurasi Path adalah dengan mengeksekusinya vi
 ```bash
 dart pub global run flutterfire_cli:flutterfire configure
 ```
+

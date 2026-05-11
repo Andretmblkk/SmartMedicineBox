@@ -1,6 +1,6 @@
-# Panduan Menghubungkan Flutter ke Firebase (Realtime Database IoT)
+﻿# Panduan Menghubungkan Flutter ke Firebase (Realtime Database IoT)
 
-Dokumen ini menjelaskan langkah demi langkah cara menghubungkan aplikasi Flutter "Smart Medicine Tracker" dengan layanan Firebase. Langkah ini sangat penting agar jadwal obat yang diinput oleh pengguna di aplikasi bisa terkirim ke internet (Firebase), lalu dibaca oleh sensor (seperti ESP8266/ESP32) untuk menggerakkan servo pada kotak obat.
+Dokumen ini menjelaskan langkah demi langkah cara menghubungkan aplikasi Flutter "Smart Medicine Tracker" dengan layanan Firebase. Langkah ini sangat penting agar jadwal obat yang diinput oleh pengguna di aplikasi bisa terkirim ke internet (Firebase), lalu dibaca oleh sensor (seperti ESP32 V3) untuk menggerakkan servo pada kotak obat.
 
 ## 1. Membuat Project di Firebase Console
 **Tujuan:** Menyiapkan wadah atau server *cloud* di database Google untuk menampung data aplikasi Anda.
@@ -46,4 +46,5 @@ Dokumen ini menjelaskan langkah demi langkah cara menghubungkan aplikasi Flutter
 * **Fungsi:** Menyuruh aplikasi untuk membaca kunci rahasia yang ada di dalam `firebase_options.dart` tadi, lalu membuat koneksi internet aktif ke Realtime Database Anda. Setelah koneksi ini terjalin, setiap kali pengguna menekan tombol Simpan di aplikasi, data otomatis langsung ter-push (terkirim) ke Firebase.
 
 ---
-Dengan ketujuh langkah ini, jembatan data antara aplikasi Flutter Anda dan Firebase sudah terbangun dengan kokoh. Selanjutnya Anda hanya perlu berfokus memprogram Sensor (ESP8266/ESP32) pada Arduino IDE untuk membaca data dari jembatan tersebut dan menggerakkan servo di jam yang tepat.
+Dengan ketujuh langkah ini, jembatan data antara aplikasi Flutter Anda dan Firebase sudah terbangun dengan kokoh. Selanjutnya Anda hanya perlu berfokus memprogram Sensor (ESP32 V3) pada Arduino IDE untuk membaca data dari jembatan tersebut dan menggerakkan servo di jam yang tepat.
+

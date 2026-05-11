@@ -1,4 +1,4 @@
-# Struktur Database dan Penyimpanan
+﻿# Struktur Database dan Penyimpanan
 
 Aplikasi Smart Medicine Tracker menggunakan dua pilar penyimpanan utama: *SharedPreferences* (Lokal) dan *Firebase Realtime Database* (Cloud/IoT). Keduanya menggunakan representasi string JSON yang persis sama untuk mempermudah sinkronisasi.
 
@@ -46,7 +46,7 @@ Berbasis JSON Tree murni. Realtime Database Firebase hanya memiliki format seper
 
 ### A. Node/Direktori: `jadwal_obat`
 *   **Lokasi Path:** `https://[PROJECT-ID].firebaseio.com/jadwal_obat`
-*   **Fungsi:** Menyediakan titik akses (*Endpoint*) statis untuk perangkat ESP8266/ESP32 agar bisa langsung menarik (*fetch*) satu gumpalan *array* (daftar) berisi jam berapa saja kotak obat harus bereaksi.
+*   **Fungsi:** Menyediakan titik akses (*Endpoint*) statis untuk perangkat ESP32 V3 agar bisa langsung menarik (*fetch*) satu gumpalan *array* (daftar) berisi jam berapa saja kotak obat harus bereaksi.
 *   **Mekanisme Timpa (Overwrite):** Setiap kali terjadi penambahan atau pengurangan obat dari aplikasi, aplikasi Flutter akan menembakkan data list seluruhnya yang baru ke *path* ini, sehingga secara otomatis Firebase akan menimpa seluruh node.
 *   **Struktur Pohon (JSON Tree Representation):**
 ```json
@@ -76,6 +76,7 @@ Berbasis JSON Tree murni. Realtime Database Firebase hanya memiliki format seper
 
 ## 3. Integrasi Penggunaan (*Payload untuk IoT*)
 
-Bagi developer *hardware* (Arduino/C++), Anda hanya perlu melakukan permintaan data (`GET` HTTP atau menggunakan library Firebase ESP8266) ke direktori `jadwal_obat`. Selanjutnya, parser C++ JSON (`ArduinoJson`) cukup melakukan iterasi (perulangan) pada Array tersebut, dan mengekstrak nilai atribut **`time`** (misal: `"08:30"`).
+Bagi developer *hardware* (Arduino/C++), Anda hanya perlu melakukan permintaan data (`GET` HTTP atau menggunakan library Firebase ESP32 V3) ke direktori `jadwal_obat`. Selanjutnya, parser C++ JSON (`ArduinoJson`) cukup melakukan iterasi (perulangan) pada Array tersebut, dan mengekstrak nilai atribut **`time`** (misal: `"08:30"`).
 
 **Logika IoT:** Jika variabel `time` dari Firebase cocok dengan modul *Real Time Clock (RTC)* di mikrokontroler, perintah aktuator (Servo bergerak membuka kotak) akan diaktifkan. Atribut lain seperti `"name"`, `"dosage"`, dan `"type"` dapat diabaikan atau diteruskan ke layar LCD/OLED mini pada kotak obat fisik.
+

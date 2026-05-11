@@ -1,4 +1,4 @@
-# Project Documentation: Smart Medicine Tracker
+﻿# Project Documentation: Smart Medicine Tracker
 
 Dokumen ini merupakan penjelasan pusat (Overview) teknis mengenai keseluruhan proyek Smart Medicine Tracker, dirancang untuk memudahkan developer baru (onboarding) dalam memahami struktur, alur, dan utang teknis (technical debt) dari proyek ini.
 
@@ -13,7 +13,7 @@ Dokumen ini merupakan penjelasan pusat (Overview) teknis mengenai keseluruhan pr
     2. Pengguna menambah jadwal obat baru (nama, dosis, waktu, aturan pakai).
     3. Aplikasi menjadwalkan notifikasi lokal di OS (Android/iOS) pada jam yang ditentukan.
     4. Secara paralel, aplikasi meng-encode list jadwal tersebut menjadi JSON dan mengunggahnya ke Firebase Realtime Database.
-    5. Sensor/Microcontroller (ESP8266/ESP32) membaca database tersebut setiap saat dan menggerakkan servo ketika waktu di alat cocok dengan jadwal di Firebase.
+    5. Sensor/Microcontroller (ESP32 V3) membaca database tersebut setiap saat dan menggerakkan servo ketika waktu di alat cocok dengan jadwal di Firebase.
 
 ---
 
@@ -87,13 +87,13 @@ Alur pemanggilan (Flow):
 | `beranda_screen.dart` | Menampilkan dashboard dan merangkum logika manajemen *state* jadwal | Menangani *Local Caching* dan pemicu sinkronisasi Firebase. |
 | `tambah_jadwal_screen.dart`| Form input pengguna, konfigurasi alarm notifikasi | Menentukan struktur JSON objek jadwal obat yang valid. |
 | `notification_service.dart`| Pengaturan zona waktu, Izin OS, dan Penjadwalan *Exact Alarm* | Inti dari sistem pengingat pasien. |
-| `firebase_schedule_service.dart`| *Push* JSON jadwal ke Node *jadwal_obat* | Penghubung nyawa aplikasi ke hardware IoT (ESP8266). |
+| `firebase_schedule_service.dart`| *Push* JSON jadwal ke Node *jadwal_obat* | Penghubung nyawa aplikasi ke hardware IoT (ESP32 V3). |
 
 ---
 
 ## 7. Critical Files
 
-**⚠️ JANGAN UBAH SEMBARANGAN:**
+**âš ï¸ JANGAN UBAH SEMBARANGAN:**
 *   **`lib/services/notification_service.dart`**: File ini menangani `tz.initializeTimeZones()` dan `AndroidNotificationDetails`. Mengubah format waktu secara sembarangan bisa menyebabkan offset waktu (alarm menyala di jam yang salah atau error pada Android 12+ terkait *Exact Alarm Permission*).
 *   **`firebase_options.dart`**: Otomatis di-_generate_ oleh Google. Merubah String hash di sini dapat memutuskan koneksi Realtime Database.
 
@@ -108,3 +108,4 @@ Alur pemanggilan (Flow):
 *   **Manajemen Pembatalan (Cancellation):** Pada versi ini, saat pengguna menghapus jadwal obat di `BerandaScreen` (`_removeMedicine`), alarm notifikasi tidak otomatis dihapus dari *Flutter Local Notifications*. ID notifikasinya di-generate secara *random* (`math.Random().nextInt(100000)`), sehingga ID tidak tersimpan untuk dihapus nanti.
     *   *Isu Potensial:* Pasien akan tetap menerima notifikasi dari jadwal yang sudah dihapus.
 *   **Duplikasi Pemanggilan Firebase:** Setiap ada penambahan atau penghapusan jadwal, aplikasi me-replace seluruh array JSON ke Firebase (tidak meng-_update_ node spesifik), sehingga bisa kurang efisien dari sisi *bandwidth* jaringan jika daftar obat sangat banyak.
+

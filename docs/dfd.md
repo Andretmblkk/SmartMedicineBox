@@ -1,4 +1,4 @@
-# Data Flow Diagram (DFD)
+﻿# Data Flow Diagram (DFD)
 
 Berikut adalah visualisasi aliran data proyek Smart Medicine Tracker. DFD sangat penting untuk melihat batasan sistem serta interaksi aktor eksternal ke dalam sistem kita.
 
@@ -13,7 +13,7 @@ graph TD
     %% Entitas Eksternal
     USER((Pengguna Pasien))
     OS((Android / iOS OS))
-    IOT((IoT Device ESP8266/ESP32))
+    IOT((IoT Device ESP32 V3))
     
     %% Proses Utama
     SYS[Sistem Smart Medicine Tracker]
@@ -78,5 +78,6 @@ graph LR
 
 1.  **Proses 1.0 (Manajemen Profil):** Berjalan pada saat pengguna pertama kali membuka aplikasi. Mengecek *Data Store 1 (Lokal)* untuk eksistensi *key* `userName`. Jika null, memanggil dialog. Jika ada, melanjutkannya ke render teks.
 2.  **Proses 2.0 (Manajemen Jadwal Obat):** Merupakan interaksi konstan setiap harinya di halaman utama dan halaman `TambahJadwalScreen`. Tempat terjadinya CRUD data jadwal.
-3.  **Proses 3.0 (Sinkronisasi IoT):** Sepenuhnya berjalan tanpa sentuhan tangan *(under the hood)*. Ketika Proses 2.0 sukses memodifikasi *Data Store 1*, fungsi ini aktif dan meneruskan beban yang sama ke *Data Store 2 (Cloud)*. IoT Device (ESP8266) bertugas pasif hanya menarik data tersebut terus-menerus (Polling).
+3.  **Proses 3.0 (Sinkronisasi IoT):** Sepenuhnya berjalan tanpa sentuhan tangan *(under the hood)*. Ketika Proses 2.0 sukses memodifikasi *Data Store 1*, fungsi ini aktif dan meneruskan beban yang sama ke *Data Store 2 (Cloud)*. IoT Device (ESP32 V3) bertugas pasif hanya menarik data tersebut terus-menerus (Polling).
 4.  **Proses 4.0 (Penjadwalan Alarm OS):** Menerjemahkan masukan format Waktu UI (Jam dan Menit dari tipe `TimeOfDay`) menjadi format mesin `TZDateTime` (Timezone Unix) dan mendelegasikan tanggung jawab pemunculan banner notifikasi ke *OS Alarm Manager*.
+

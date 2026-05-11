@@ -1,4 +1,4 @@
-# Backend & API Struktur
+﻿# Backend & API Struktur
 
 Dokumen ini memaparkan penjelasan arsitektur komunikasi data *(backend routing)* dari aplikasi Smart Medicine Tracker.
 
@@ -22,7 +22,7 @@ Sebagai gantinya, seluruh fungsi infrastruktur *Backend*, termasuk pangkalan dat
 Lalu lintas pertukaran data ditangani murni via protokol WebSockets *Realtime Database Firebase*. Protokol ini sangat ringan dan difokuskan pada sinkronisasi status waktu-nyata (Real-time state synchronization), alih-alih pola *Request-Response* biasa.
 
 ### A. Interkoneksi IoT (The Bridge)
-Arsitektur Firebase digunakan karena proyek ini membutuhkan perangkat keras tertanam (Embedded Hardware IoT seperti modul Wi-Fi ESP8266 atau ESP32). ESP8266 hanya dapat menahan jumlah memori *(heap)* dan koneksi yang sangat minim. Firebase memungkinkan ESP8266 melakukan *Stream / Long-polling / GET request* JSON yang sangat kecil tanpa overhead (beban) koneksi server tradisional.
+Arsitektur Firebase digunakan karena proyek ini membutuhkan perangkat keras tertanam (Embedded Hardware IoT seperti modul Wi-Fi ESP32 V3 atau ESP32). ESP32 V3 hanya dapat menahan jumlah memori *(heap)* dan koneksi yang sangat minim. Firebase memungkinkan ESP32 V3 melakukan *Stream / Long-polling / GET request* JSON yang sangat kecil tanpa overhead (beban) koneksi server tradisional.
 
 *   Aplikasi -> Firebase -> IoT (Kotak Obat Fisik).
 *   *File Utama yang menangani:* `lib/services/firebase_schedule_service.dart`.
@@ -43,3 +43,4 @@ Anda mungkin tidak menemukan folder `models/api` atau `services/api_client.dart`
 Karena aplikasi mengimplementasikan konsep "Tempatkan ke Database" (Push to DB) tanpa validasi API di tengahnya (ketiadaan backend yang berfungsi menyaring permintaan HTTP POST), keamanan di-shift *(digeser)* ke layer konfigurasi Firebase Security Rules. 
 
 Pada saat ini (fase prototipe), konfigurasi dibiarkan terbuka (`.read: true`, `.write: true`) sehingga tidak ada token Bearer, API Keys rahasia (yang di-generate server), maupun protokol *OAuth* yang ada di dalam source code aplikasi. Otentikasi sepenuhnya dilewati. Jika hendak menaikkan tingkat keamanan API ini untuk *Production*, Anda wajib mengaktifkan modul Autentikasi Firebase di dalam aplikasi Flutter dan membatasi `write` hanya untuk pengguna yang memiliki Token Firebase yang valid.
+

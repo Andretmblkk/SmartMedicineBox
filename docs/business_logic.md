@@ -1,4 +1,4 @@
-# Logika Bisnis (Business Logic)
+﻿# Logika Bisnis (Business Logic)
 
 Dokumen ini adalah rekam jejak cara berpikir sistem secara *step-by-step* terhadap aturan dasar yang menyelimuti (business logic) proyek Smart Medicine Tracker.
 
@@ -37,7 +37,7 @@ tz.TZDateTime.local(now.year, now.month, now.day, hour, minute);
 Fitur penghapusan terikat di `_BerandaScreenState` pada metode `_removeMedicine`.
 1.  **Dihapus dari Tampilan Visual:** Metode memanggil array list dari memori, men-`removeAt(index)` item tersebut, lalu menyuruh UI me-render ulang dengan `setState`. (Kartu akan hilang).
 2.  **Dihapus dari Storage Lokal:** Secara otomatis tersambung ke `_saveSchedule()`, list terbaru (yang sudah berkurang satu itemnya) akan dikonversi menjadi JSON String lalu menimpa versi usang di `SharedPreferences`.
-3.  **Dihapus dari Cloud IoT:** JSON terbaru tersebut langsung diteruskan (forward) menimpa struktur pohon Firebase di `jadwal_obat`. Saat kotak ESP8266 mengecek firebase beberapa detik kemudian, kotak tersebut sudah tidak akan menemukan data jadwal yang baru saja dihapus.
+3.  **Dihapus dari Cloud IoT:** JSON terbaru tersebut langsung diteruskan (forward) menimpa struktur pohon Firebase di `jadwal_obat`. Saat kotak ESP32 V3 mengecek firebase beberapa detik kemudian, kotak tersebut sudah tidak akan menemukan data jadwal yang baru saja dihapus.
 4.  **Kelemahan (Technical Debt):** Pada versi ini, sistem *belum* memanggil fungsi pembatalan OS dari `NotificationService` (`flutterLocalNotificationsPlugin.cancel(id)`). ID tidak dapat dibatalkan karena tidak disimpan di array database. Oleh karena itu, notifikasi di HP tetap bisa berbunyi di masa depan meskipun jadwal visual telah dihapus.
 
 ---
@@ -47,3 +47,4 @@ Fitur penghapusan terikat di `_BerandaScreenState` pada metode `_removeMedicine`
 Obat dapat memiliki status seperti "Belum Diminum" atau "Sudah Diminum".
 *   Pada proyek saat ini, visual indikator `status` diatur pada saat data obat dibuat dengan format default ("Belum"). 
 *   Progress bar `AdherenceRing` (Lingkaran Kepatuhan) di dalam struktur belum dihubungkan dengan komputasi dinamis dari list database. Ini menyisakan ruang bagi developer selanjutnya untuk melengkapi logika interaksi dengan membuat variabel hitung `sudah / total * 100%`.
+

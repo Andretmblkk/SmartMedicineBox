@@ -1,4 +1,4 @@
-# Smart Medicine Tracker
+﻿# Smart Medicine Tracker
 
 ![Smart Medicine Tracker](assets/images/logo.png) <!-- Ganti dengan path logo asli jika ada -->
 
@@ -6,10 +6,10 @@ Sebuah aplikasi pengingat jadwal minum obat cerdas yang terintegrasi langsung de
 
 ---
 
-## 📌 Project Overview
+## ðŸ“Œ Project Overview
 
 *   **Nama Aplikasi:** Smart Medicine Tracker
-*   **Fungsi Aplikasi:** Mengelola jadwal minum obat, memberikan notifikasi pengingat secara lokal di perangkat, dan mensinkronisasikan jadwal tersebut ke perangkat IoT (ESP8266/ESP32) untuk menggerakkan kotak obat mekanis.
+*   **Fungsi Aplikasi:** Mengelola jadwal minum obat, memberikan notifikasi pengingat secara lokal di perangkat, dan mensinkronisasikan jadwal tersebut ke perangkat IoT (ESP32 V3) untuk menggerakkan kotak obat mekanis.
 *   **Tujuan Aplikasi:** Membantu pasien atau orang tua yang sering lupa jadwal minum obat, memastikan dosis dan waktu yang tepat, serta mengotomatisasi penyajian obat secara fisik.
 *   **Fitur Utama:**
     *   Sistem Penjadwalan Multi-waktu (Pagi, Siang, Malam).
@@ -21,7 +21,7 @@ Sebuah aplikasi pengingat jadwal minum obat cerdas yang terintegrasi langsung de
 
 ---
 
-## 🛠️ Tech Stack
+## ðŸ› ï¸ Tech Stack
 
 *   **Flutter Version:** ^3.11.5 (Sesuai constraint SDK)
 *   **Dart Version:** Mendukung Dart 3
@@ -39,7 +39,7 @@ Sebuah aplikasi pengingat jadwal minum obat cerdas yang terintegrasi langsung de
 
 ---
 
-## ⚙️ Installation
+## âš™ï¸ Installation
 
 Berikut adalah langkah-langkah lengkap untuk memasang dan menjalankan proyek ini di lingkungan lokal Anda.
 
@@ -79,7 +79,7 @@ flutter run
 
 ---
 
-## 📦 Build Instructions
+## ðŸ“¦ Build Instructions
 
 Untuk merilis aplikasi ke tahap produksi, gunakan perintah berikut:
 
@@ -104,7 +104,7 @@ flutter build apk --debug
 
 ---
 
-## 🌍 Environment Setup
+## ðŸŒ Environment Setup
 
 Proyek ini tidak menggunakan file `.env` klasik karena mengandalkan arsitektur Firebase yang tersentralisasi dalam `firebase_options.dart`.
 
@@ -113,15 +113,16 @@ Proyek ini tidak menggunakan file `.env` klasik karena mengandalkan arsitektur F
 
 ---
 
-## 🔗 Dependency Overview
+## ðŸ”— Dependency Overview
 
 | Package | Kegunaan Utama |
 | :--- | :--- |
 | **`flutter_local_notifications`** | Jantung dari aplikasi ini; menangani pemunculan popup dan bunyi alarm persis di jam yang dijadwalkan, bahkan saat aplikasi ditutup. |
 | **`timezone` & `flutter_timezone`** | Penting untuk memastikan sinkronisasi zona waktu (misalnya WIB, WITA, WIT) agar notifikasi alarm lokal tidak melenceng akibat perbedaan UTC. |
-| **`firebase_database`** | Mengirimkan JSON jadwal (Waktu, Nama Obat) ke Cloud agar dapat ditangkap secara otomatis oleh modul Wi-Fi (ESP8266/ESP32) di kotak obat. |
+| **`firebase_database`** | Mengirimkan JSON jadwal (Waktu, Nama Obat) ke Cloud agar dapat ditangkap secara otomatis oleh modul Wi-Fi (ESP32 V3) di kotak obat. |
 | **`shared_preferences`** | Menghindari _loading_ kosong saat aplikasi baru dibuka dengan cara men-cache jadwal terakhir di penyimpanan internal HP. |
 | **`google_fonts`** | Memberikan kustomisasi font untuk seluruh aplikasi demi estetika modern tanpa harus mendownload font statis `.ttf` secara manual. |
 
 ---
 *Dokumentasi ini dibuat secara otomatis dengan bantuan analisis berbasis Source Code langsung.*
+
