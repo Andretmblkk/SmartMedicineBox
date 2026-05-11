@@ -1,0 +1,177 @@
+{
+  "main": {
+    "id": "d67fa24cb82c5e50",
+    "type": "split",
+    "children": [
+      {
+        "id": "e132ade3b5b073ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23eb80600ff88674",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "architecture.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "architecture"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "81bf225063bff94e",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "263e34aa9f3d8986",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Penjelajah berkas"
+        }
+      },
+      {
+        "id": "97ed2efab5474a3b",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Penelusuran"
+        }
+      },
+      {
+        "id": "e64254bc21ddb9e0",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tag"
+        }
+      },
+      {
+        "id": "41656aa70e5d1430",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "Semua properti"
+        }
+      },
+      {
+        "id": "9a7f1e7b1c417d52",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Penanda"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "c276c3d4fe3baa1f",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "36abe8b28770a631",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "architecture.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlink"
+        }
+      },
+      {
+        "id": "48918e31b1c8dea0",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "architecture.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Tautan Keluar"
+        }
+      },
+      {
+        "id": "f93ca61584086648",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "architecture.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Kerangka"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Buka peralih cepat": false,
+      "graph:Buka tampilan grafik": false,
+      "canvas:Buat kanvas baru": false,
+      "daily-notes:Buka catatan hari ini": false,
+      "templates:Masukkan template": false,
+      "command-palette:Buka palet perintah": false,
+      "bases:Buat basis baru": false
+    }
+  },
+  "active": "23eb80600ff88674",
+  "lastOpenFiles": [
+    "api_backend.md",
+    "state_management.md",
+    "ui_structure.md"
+  ]
+}
