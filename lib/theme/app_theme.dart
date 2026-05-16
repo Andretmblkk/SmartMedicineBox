@@ -18,8 +18,6 @@ class AppTheme {
   // ── Warna Kategori Obat ──
   static const Color pillColor = Color(0xFF0066FF);
   static const Color capsuleColor = Color(0xFF00B14F);
-  static const Color syrupColor = Color(0xFFFF9900);
-  static const Color injectionColor = Color(0xFFE53935);
 
   static Color background(BuildContext context) => lightBg;
   static Color cardBg(BuildContext context) => lightCard;

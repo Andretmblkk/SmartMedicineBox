@@ -5,6 +5,6 @@ import 'package:medicinetreatment/main.dart';
 void main() {
   testWidgets('App launches smoke test', (WidgetTester tester) async {
     await tester.pumpWidget(const SmartMedicineApp());
-    expect(find.text('Good Morning 👋'), findsOneWidget);
+    expect(find.text('Pengingat Aktif'), findsOneWidget);
   });
 }

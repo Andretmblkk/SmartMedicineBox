@@ -7,20 +7,24 @@ import 'dart:io';
 
 class NotificationService {
   NotificationService._privateConstructor();
-  static final NotificationService instance = NotificationService._privateConstructor();
+  static final NotificationService instance =
+      NotificationService._privateConstructor();
 
-  final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+  final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
   bool _isInitialized = false;
 
   Future<void> init() async {
     if (_isInitialized) return;
 
     tz.initializeTimeZones();
-    
+
     try {
       final dynamic tzData = await FlutterTimezone.getLocalTimezone();
       // flutter_timezone v2+ mengembalikan objek TimezoneInfo, v1 mengembalikan String
-      final String currentTimeZone = tzData is String ? tzData : tzData.name.toString();
+      final String currentTimeZone = tzData is String
+          ? tzData
+          : tzData.name.toString();
       tz.setLocalLocation(tz.getLocation(currentTimeZone));
       debugPrint('✅ Timezone otomatis: $currentTimeZone');
     } catch (e) {
@@ -43,21 +47,23 @@ class NotificationService {
         debugPrint('⚠️ Timezone fallback ke UTC');
       }
     }
-    
-    const AndroidInitializationSettings initializationSettingsAndroid = 
-        AndroidInitializationSettings('ic_launcher');
-        
-    const DarwinInitializationSettings initializationSettingsIOS = DarwinInitializationSettings(
-      requestAlertPermission: true,
-      requestBadgePermission: true,
-      requestSoundPermission: true,
-    );
 
-    const InitializationSettings initializationSettings = InitializationSettings(
-      android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
-    );
-    
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('ic_launcher');
+
+    const DarwinInitializationSettings initializationSettingsIOS =
+        DarwinInitializationSettings(
+          requestAlertPermission: true,
+          requestBadgePermission: true,
+          requestSoundPermission: true,
+        );
+
+    const InitializationSettings initializationSettings =
+        InitializationSettings(
+          android: initializationSettingsAndroid,
+          iOS: initializationSettingsIOS,
+        );
+
     await _flutterLocalNotificationsPlugin.initialize(
       initializationSettings,
       onDidReceiveNotificationResponse: (details) {
@@ -72,18 +78,22 @@ class NotificationService {
   Future<void> requestPermissions() async {
     if (Platform.isAndroid) {
       final androidImplementation = _flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
-      
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >();
+
       // Izin notifikasi dasar (Android 13+)
       await androidImplementation?.requestNotificationsPermission();
-      
+
       // Izin alarm tepat (Exact Alarm) untuk Android 12+
-      // Catatan: Ini biasanya otomatis diizinkan jika dideklarasikan di manifest, 
+      // Catatan: Ini biasanya otomatis diizinkan jika dideklarasikan di manifest,
       // tapi untuk beberapa perangkat perlu dicek.
       debugPrint('ℹ️ Meminta izin Notifikasi & Exact Alarm');
     } else if (Platform.isIOS) {
       await _flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
+          .resolvePlatformSpecificImplementation<
+            IOSFlutterLocalNotificationsPlugin
+          >()
           ?.requestPermissions(alert: true, badge: true, sound: true);
     }
   }
@@ -98,22 +108,30 @@ class NotificationService {
     if (!_isInitialized) await init();
 
     final now = tz.TZDateTime.now(tz.local);
-    var scheduledDate = tz.TZDateTime(tz.local, now.year, now.month, now.day, hour, minute);
+    var scheduledDate = tz.TZDateTime(
+      tz.local,
+      now.year,
+      now.month,
+      now.day,
+      hour,
+      minute,
+    );
 
     if (scheduledDate.isBefore(now)) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
 
-    const AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
-      'medicine_reminder_channel',
-      'Pengingat Obat',
-      channelDescription: 'Notifikasi untuk jadwal minum obat Anda',
-      importance: Importance.max,
-      priority: Priority.high,
-      ticker: 'ticker',
-      icon: 'ic_launcher',
-    );
-    
+    const AndroidNotificationDetails androidNotificationDetails =
+        AndroidNotificationDetails(
+          'medicine_reminder_channel',
+          'Pengingat Obat',
+          channelDescription: 'Notifikasi untuk jadwal minum obat Anda',
+          importance: Importance.max,
+          priority: Priority.high,
+          ticker: 'ticker',
+          icon: 'ic_launcher',
+        );
+
     const NotificationDetails notificationDetails = NotificationDetails(
       android: androidNotificationDetails,
       iOS: DarwinNotificationDetails(),
@@ -142,7 +160,17 @@ class NotificationService {
     required String body,
     required int hour,
     required int minute,
-  }) => scheduleNotification(id: id, title: title, body: body, hour: hour, minute: minute);
+  }) => scheduleNotification(
+    id: id,
+    title: title,
+    body: body,
+    hour: hour,
+    minute: minute,
+  );
+
+  Future<void> cancel(int id) async {
+    await _flutterLocalNotificationsPlugin.cancel(id);
+  }
 
   Future<void> cancelAll() async {
     await _flutterLocalNotificationsPlugin.cancelAll();

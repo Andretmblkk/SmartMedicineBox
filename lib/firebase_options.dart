@@ -88,4 +88,5 @@ class DefaultFirebaseOptions {
     databaseURL: 'https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'smart-medicine-box-9ecee.firebasestorage.app',
   );
+
 }
