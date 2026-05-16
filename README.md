@@ -6,7 +6,7 @@ Sebuah aplikasi pengingat jadwal minum obat cerdas yang terintegrasi langsung de
 
 ---
 
-## ðŸ“Œ Project Overview
+## Project Overview
 
 *   **Nama Aplikasi:** Smart Medicine Tracker
 *   **Fungsi Aplikasi:** Mengelola jadwal minum obat, memberikan notifikasi pengingat secara lokal di perangkat, dan mensinkronisasikan jadwal tersebut ke perangkat IoT (ESP32 V3) untuk menggerakkan kotak obat mekanis.
@@ -21,7 +21,7 @@ Sebuah aplikasi pengingat jadwal minum obat cerdas yang terintegrasi langsung de
 
 ---
 
-## ðŸ› ï¸ Tech Stack
+## Tech Stack
 
 *   **Flutter Version:** ^3.11.5 (Sesuai constraint SDK)
 *   **Dart Version:** Mendukung Dart 3
@@ -39,7 +39,7 @@ Sebuah aplikasi pengingat jadwal minum obat cerdas yang terintegrasi langsung de
 
 ---
 
-## âš™ï¸ Installation
+## Installation
 
 Berikut adalah langkah-langkah lengkap untuk memasang dan menjalankan proyek ini di lingkungan lokal Anda.
 
@@ -79,7 +79,7 @@ flutter run
 
 ---
 
-## ðŸ“¦ Build Instructions
+## Build Instructions
 
 Untuk merilis aplikasi ke tahap produksi, gunakan perintah berikut:
 
@@ -104,7 +104,7 @@ flutter build apk --debug
 
 ---
 
-## ðŸŒ Environment Setup
+## Environment Setup
 
 Proyek ini tidak menggunakan file `.env` klasik karena mengandalkan arsitektur Firebase yang tersentralisasi dalam `firebase_options.dart`.
 
@@ -113,7 +113,7 @@ Proyek ini tidak menggunakan file `.env` klasik karena mengandalkan arsitektur F
 
 ---
 
-## ðŸ”— Dependency Overview
+## Dependency Overview
 
 | Package | Kegunaan Utama |
 | :--- | :--- |

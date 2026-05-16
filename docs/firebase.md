@@ -1,4 +1,4 @@
-﻿# Firebase Realtime Database Integration
+# Firebase Realtime Database Integration
 
 Dokumen ini menjelaskan implementasi Firebase di dalam aplikasi Smart Medicine Tracker dan fungsinya sebagai penghubung (jembatan data) untuk perangkat keras IoT (ESP32 V3).
 

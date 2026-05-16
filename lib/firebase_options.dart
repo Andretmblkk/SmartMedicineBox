@@ -41,51 +41,51 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAInFfieopCPBix0QO2QzNmwwIlXSU_KEU',
-    appId: '1:154722549550:web:463c1baad9d0e602d084bf',
-    messagingSenderId: '154722549550',
-    projectId: 'smart-medicine-box-c4058',
-    authDomain: 'smart-medicine-box-c4058.firebaseapp.com',
-    databaseURL: 'https://smart-medicine-box-c4058-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'smart-medicine-box-c4058.firebasestorage.app',
+    apiKey: 'AIzaSyBYuQJQzwOwCMSL7JhNUHFg6et3YdYE3fg',
+    appId: '1:958726952762:web:20876cfb35e8d198876203',
+    messagingSenderId: '958726952762',
+    projectId: 'smart-medicine-box-9ecee',
+    authDomain: 'smart-medicine-box-9ecee.firebaseapp.com',
+    databaseURL: 'https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'smart-medicine-box-9ecee.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBqwLQcD62d9Udu-stZBnna16nshS4enco',
-    appId: '1:154722549550:android:506be3be8de7edf7d084bf',
-    messagingSenderId: '154722549550',
-    projectId: 'smart-medicine-box-c4058',
-    databaseURL: 'https://smart-medicine-box-c4058-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'smart-medicine-box-c4058.firebasestorage.app',
+    apiKey: 'AIzaSyBevcFf56aVNUeLfqlAiISZfQfqUvOG0v0',
+    appId: '1:958726952762:android:cd823d4be9648026876203',
+    messagingSenderId: '958726952762',
+    projectId: 'smart-medicine-box-9ecee',
+    databaseURL: 'https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'smart-medicine-box-9ecee.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAljCbJ09VDcte66uukvSOxvj9wIO9qv6M',
-    appId: '1:154722549550:ios:e6e005d113070717d084bf',
-    messagingSenderId: '154722549550',
-    projectId: 'smart-medicine-box-c4058',
-    databaseURL: 'https://smart-medicine-box-c4058-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'smart-medicine-box-c4058.firebasestorage.app',
+    apiKey: 'AIzaSyDivbszQbsuVQUkpPmP9px-09UHCzbxcgg',
+    appId: '1:958726952762:ios:dc32afdbfc6d265e876203',
+    messagingSenderId: '958726952762',
+    projectId: 'smart-medicine-box-9ecee',
+    databaseURL: 'https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'smart-medicine-box-9ecee.firebasestorage.app',
     iosBundleId: 'com.example.medicinetreatment',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAljCbJ09VDcte66uukvSOxvj9wIO9qv6M',
-    appId: '1:154722549550:ios:e6e005d113070717d084bf',
-    messagingSenderId: '154722549550',
-    projectId: 'smart-medicine-box-c4058',
-    databaseURL: 'https://smart-medicine-box-c4058-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'smart-medicine-box-c4058.firebasestorage.app',
+    apiKey: 'AIzaSyDivbszQbsuVQUkpPmP9px-09UHCzbxcgg',
+    appId: '1:958726952762:ios:dc32afdbfc6d265e876203',
+    messagingSenderId: '958726952762',
+    projectId: 'smart-medicine-box-9ecee',
+    databaseURL: 'https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'smart-medicine-box-9ecee.firebasestorage.app',
     iosBundleId: 'com.example.medicinetreatment',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAInFfieopCPBix0QO2QzNmwwIlXSU_KEU',
-    appId: '1:154722549550:web:1eec39b83990ec1ad084bf',
-    messagingSenderId: '154722549550',
-    projectId: 'smart-medicine-box-c4058',
-    authDomain: 'smart-medicine-box-c4058.firebaseapp.com',
-    databaseURL: 'https://smart-medicine-box-c4058-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'smart-medicine-box-c4058.firebasestorage.app',
+    apiKey: 'AIzaSyBYuQJQzwOwCMSL7JhNUHFg6et3YdYE3fg',
+    appId: '1:958726952762:web:9387f961cbe616c2876203',
+    messagingSenderId: '958726952762',
+    projectId: 'smart-medicine-box-9ecee',
+    authDomain: 'smart-medicine-box-9ecee.firebaseapp.com',
+    databaseURL: 'https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'smart-medicine-box-9ecee.firebasestorage.app',
   );
 }

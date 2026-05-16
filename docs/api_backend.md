@@ -1,4 +1,4 @@
-﻿# Backend & API Struktur
+# Backend & API Struktur
 
 Dokumen ini memaparkan penjelasan arsitektur komunikasi data *(backend routing)* dari aplikasi Smart Medicine Tracker.
 

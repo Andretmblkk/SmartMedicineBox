@@ -1,4 +1,4 @@
-﻿# Data Flow Diagram (DFD)
+# Data Flow Diagram (DFD)
 
 Berikut adalah visualisasi aliran data proyek Smart Medicine Tracker. DFD sangat penting untuk melihat batasan sistem serta interaksi aktor eksternal ke dalam sistem kita.
 

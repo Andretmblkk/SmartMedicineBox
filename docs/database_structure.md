@@ -1,4 +1,4 @@
-﻿# Struktur Database dan Penyimpanan
+# Struktur Database dan Penyimpanan
 
 Aplikasi Smart Medicine Tracker menggunakan dua pilar penyimpanan utama: *SharedPreferences* (Lokal) dan *Firebase Realtime Database* (Cloud/IoT). Keduanya menggunakan representasi string JSON yang persis sama untuk mempermudah sinkronisasi.
 

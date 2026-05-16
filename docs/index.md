@@ -1,4 +1,4 @@
-﻿# ðŸ¥ Smart Medicine Tracker - Documentation Hub
+# ðŸ¥ Smart Medicine Tracker - Documentation Hub
 
 Selamat datang di pusat dokumentasi teknis **Smart Medicine Tracker**. Halaman indeks ini dirancang khusus untuk memudahkan navigasi antar dokumen
 

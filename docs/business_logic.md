@@ -1,4 +1,4 @@
-﻿# Logika Bisnis (Business Logic)
+# Logika Bisnis (Business Logic)
 
 Dokumen ini adalah rekam jejak cara berpikir sistem secara *step-by-step* terhadap aturan dasar yang menyelimuti (business logic) proyek Smart Medicine Tracker.
 

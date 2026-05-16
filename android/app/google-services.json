@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "154722549550",
-    "firebase_url": "https://smart-medicine-box-c4058-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "smart-medicine-box-c4058",
-    "storage_bucket": "smart-medicine-box-c4058.firebasestorage.app"
+    "project_number": "958726952762",
+    "firebase_url": "https://smart-medicine-box-9ecee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-medicine-box-9ecee",
+    "storage_bucket": "smart-medicine-box-9ecee.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:154722549550:android:506be3be8de7edf7d084bf",
+        "mobilesdk_app_id": "1:958726952762:android:cd823d4be9648026876203",
         "android_client_info": {
           "package_name": "com.example.medicinetreatment"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBqwLQcD62d9Udu-stZBnna16nshS4enco"
+          "current_key": "AIzaSyBevcFf56aVNUeLfqlAiISZfQfqUvOG0v0"
         }
       ],
       "services": {
